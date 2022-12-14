@@ -59,6 +59,26 @@ module.exports = {
   ],
 }
 ```
+## 讓專案擁有autoimport功能
+```javascript
+npm i unplugin-auto-import
+
+//vite.config.ts
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+import AutoImport from 'unplugin-auto-import/vite'
+
+export default defineConfig({
+  plugins: [
+    vue(),
+    AutoImport({
+      imports:['vue'],
+      dts:'src/auto-imports.d.ts'
+    })
+  ],
+})
+
+```
 ## 推薦安裝VS code套件 : tailwindcss
 
 # vue 風格指南
