@@ -65,7 +65,6 @@ npm i unplugin-auto-import
 
 //vite.config.ts
 import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
 import AutoImport from 'unplugin-auto-import/vite'
 
 export default defineConfig({
@@ -74,6 +73,26 @@ export default defineConfig({
     AutoImport({
       imports:['vue'],
       dts:'src/auto-imports.d.ts'
+    })
+  ],
+})
+
+```
+## 自動import 元件功能
+```javascript
+npm i unplugin-vue-components
+
+//vite.config.ts
+import { defineConfig } from 'vite'
+import Components from 'unplugin-vue-components/vite'
+
+export default defineConfig({
+  plugins: [
+    Components({
+      extensions: ['vue'],
+      dirs:['src/commonComponents'],  //要從哪個資料夾底下自動import元件，預設是components
+      include: [/\.vue$/,/\.vue\?vue/],
+      dts:"src/auto-components.d.ts",
     })
   ],
 })
