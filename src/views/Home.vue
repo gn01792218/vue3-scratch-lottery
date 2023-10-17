@@ -13,12 +13,22 @@
     <a href="https://v3.vuejs.org/" target="_blank">Vue 3 Docs</a>
   </p>
 
-  <button type="button" @click="count++">count is: {{ count }}</button>
+  <button type="button" @click="countFromRef++">count is: {{ countFromRef }}</button>
+  <br>
+  <div>
+    <button type="button" @click="increment()">pinia count is: {{ count }}</button>
+    <p>Getter: count*2 = {{ doubleCount }}</p>
+  </div>
+
 </template>
 <script setup lang="ts">
+import { storeToRefs } from 'pinia';
+import { useCounterStoreForSetup } from '@/store/useCounterStoreForSetup'
 
-defineProps<{ msg: string }>();
+//Pinia
+const { increment } = useCounterStoreForSetup()
+const { count,doubleCount } = storeToRefs(useCounterStoreForSetup())
 
-const count = ref(0);
-
+//一般的REF
+const countFromRef = ref(0);
 </script>

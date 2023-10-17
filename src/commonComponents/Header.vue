@@ -5,7 +5,7 @@
                 <RouterLink to="/">首頁</RouterLink>
             </li>
             <li class="cursor-pointer">
-                <RouterLink to="/abc">測試路由</RouterLink>
+                <RouterLink to="/About">測試路由</RouterLink>
             </li>
         </ul>
     </nav>
