@@ -52,6 +52,7 @@ function startScartch(e: MouseEvent | TouchEvent) {
 function scartching(e: MouseEvent | TouchEvent) {
   if (!context.value) return;
   if (isDrawing) {
+    e.preventDefault()
     let { x, y } = getClientPosition(e);
     context.value.globalCompositeOperation = "destination-out";
     context.value.beginPath();
