@@ -3,7 +3,7 @@
     ref="canvas"
     width="400"
     height="400"
-    @mousedown="startScartch"
+    @mousedown.prevent="startScartch"
     @mousemove="scartching"
     @mouseup="EndScartch"
     @touchstart="startScartch"
@@ -52,7 +52,6 @@ function startScartch(e: MouseEvent | TouchEvent) {
 function scartching(e: MouseEvent | TouchEvent) {
   if (!context.value) return;
   if (isDrawing) {
-    e.preventDefault()
     let { x, y } = getClientPosition(e);
     context.value.globalCompositeOperation = "destination-out";
     context.value.beginPath();
