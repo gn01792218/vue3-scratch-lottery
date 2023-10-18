@@ -3,7 +3,7 @@
     ref="canvas"
     width="400"
     height="400"
-    @mousedown.prevent="startScartch"
+    @mousedown="startScartch"
     @mousemove="scartching"
     @mouseup="EndScartch"
     @touchstart="startScartch"
@@ -52,6 +52,7 @@ function startScartch(e: MouseEvent | TouchEvent) {
 function scartching(e: MouseEvent | TouchEvent) {
   if (!context.value) return;
   if (isDrawing) {
+    e.preventDefault() //禁止手機touch時的預設拖曳動作，防止整個canvas元素被拖曳
     let { x, y } = getClientPosition(e);
     context.value.globalCompositeOperation = "destination-out";
     context.value.beginPath();
