@@ -3,9 +3,12 @@
     ref="canvas"
     width="400"
     height="400"
-    @mousedown="mouseDown"
-    @mousemove="mouseMove"
-    @mouseup="mouseUp"
+    @mousedown="startScartch"
+    @mousemove="scartching"
+    @mouseup="EndScartch"
+    @touchstart="startScartch"
+    @touchmove="scartching"
+    @touchend="EndScartch"
   ></canvas>
 </template>
 <script setup lang="ts">
@@ -30,7 +33,7 @@ function init() {
   context.value.fillStyle = "#ddd";
   context.value.fillRect(250, 160, 120, 120);
 
-  drawImage(30,160,150,150,getAssetsFileURL('logo.png'));
+  drawImage(30, 160, 150, 150, getAssetsFileURL("logo.png"));
 
   //底圖一定要用背景圖否則會被畫布洗掉
   canvas.value.style.background =
@@ -40,19 +43,16 @@ function init() {
   context.value.lineWidth = 20;
   context.value.lineJoin = "round";
 }
-function mouseDown(e: MouseEvent) {
+function startScartch(e: MouseEvent | TouchEvent) {
   isDrawing = true;
-  startX = e.clientX;
-  startY = e.clientY;
-  console.log("按下滑鼠時座標", startX, startY);
+  let { x, y } = getClientPosition(e);
+  startX = x;
+  startY = y;
 }
-
-function mouseMove(e: MouseEvent) {
+function scartching(e: MouseEvent | TouchEvent) {
   if (!context.value) return;
   if (isDrawing) {
-    const x = e.clientX;
-    const y = e.clientY;
-    console.log("從起點", startX, startY, "畫到", x, y);
+    let { x, y } = getClientPosition(e);
     context.value.globalCompositeOperation = "destination-out";
     context.value.beginPath();
     context.value.moveTo(startX, startY);
@@ -61,11 +61,9 @@ function mouseMove(e: MouseEvent) {
     context.value.stroke();
     startX = x;
     startY = y;
-    console.log("重設畫畫中的滑鼠座標為", startX, startY);
   }
 }
-
-function mouseUp() {
+function EndScartch() {
   isDrawing = false;
 }
 function drawImage(
@@ -80,5 +78,16 @@ function drawImage(
   img.onload = function () {
     context.value!.drawImage(img, x, y, width, height);
   };
+}
+function getClientPosition(e: MouseEvent | TouchEvent) {
+  let x, y;
+  if (e instanceof MouseEvent) {
+    x = e.clientX;
+    y = e.clientY;
+  } else {
+    x = e.touches[0].clientX;
+    y = e.touches[0].clientY;
+  }
+  return { x, y };
 }
 </script>
