@@ -1,7 +1,7 @@
 <template>
   <ul class="bg-black">
     <li class="w-[100px] h-[50px] bg-yellow-500 flex items-center justify-center">
-      <RouterLink to="/ScratchLotteryDemo">刮刮樂</RouterLink>
+      <RouterLink to="/ScratcDemo">刮刮樂示範</RouterLink>
     </li>
   </ul>
   <button type="button" @click="countFromRef++">count is: {{ countFromRef }}</button>

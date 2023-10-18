@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory, RouteRecordRaw ,createWebHashHistory} from 'vue-router'
-import ScratchLotteryDemo from '@/views/ScratchLotteryDemo.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -13,9 +12,9 @@ const routes: Array<RouteRecordRaw> = [
     component:()=>import('@/views/About.vue')
   },
   {
-    path:'/ScratchLotteryDemo',
-    name:'ScratchLotteryDemo',
-    component:ScratchLotteryDemo
+    path:'/ScratcDemo',
+    name:'ScratcDemo',
+    component:()=>import('@/views/ScratchDemo.vue')
   }
 ]
 
