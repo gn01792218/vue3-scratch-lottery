@@ -9,5 +9,4 @@ import Header from '@/components/Header.vue'
 document.addEventListener('wheel', function(event) {
     event.preventDefault()
 }, { passive: false })
-
 </script>

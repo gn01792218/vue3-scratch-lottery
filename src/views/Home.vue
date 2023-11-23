@@ -4,7 +4,8 @@
       <RouterLink to="/ScratcDemo">刮刮樂示範</RouterLink>
     </li>
   </ul>
-  <section class="bg-red-100 flex justify-center">
+  <section id="test" class="bg-red-100 flex justify-center">
+    <p>這個區塊的元素要可以滾輪滾動scrollBar，所以需要event.stopPropagation()</p>
     <div class="border-2 border-black w-[300px] h-[100px] overflow-scroll">
       <p>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
       <p>BBB</p>
@@ -30,4 +31,12 @@ const { count,doubleCount } = storeToRefs(useCounterStoreForSetup())
 
 //一般的REF
 const countFromRef = ref(0);
+
+onMounted(()=>{
+  //這裡的子元素需要有滾輪動作，所以要stopPropagation
+  const t = document.getElementById('test')!
+  t.addEventListener('wheel', function(event) {
+    event.stopPropagation()
+  })
+})
 </script>
