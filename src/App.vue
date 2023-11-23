@@ -12,9 +12,23 @@ document.addEventListener('wheel', function(event) {
 
 
 //防止手機端手指縮放網頁
+let lastTouchEnd = 0;
 document.addEventListener('touchstart', function(event) {
   if (event.touches.length > 1) {
     event.preventDefault()
   }
 })
+document.addEventListener('touchmove', function (event) {
+  if (event.touches.length > 1) {
+    event.preventDefault();
+  }
+});
+
+document.addEventListener('touchend', function (event) {
+  var now = new Date().getTime();
+  if (now - lastTouchEnd <= 300) {
+    event.preventDefault();
+  }
+  lastTouchEnd = now;
+});
 </script>
