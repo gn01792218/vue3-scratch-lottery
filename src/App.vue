@@ -25,14 +25,14 @@ document.addEventListener('touchstart', function(event) {
     event.preventDefault()
     testText.value = '多於一個手指，預防start動作'
   }
-})
+},{passive:false})
 document.addEventListener('touchmove', function (event) {
   status.value = 'touchmove'
   if (event.touches.length > 1) {
     event.preventDefault();
     testText.value = '多於一個手指，預防move動作'
   }
-});
+},{passive:false});
 
 document.addEventListener('touchend', function (event) {
   status.value = 'touchEnd'
@@ -40,5 +40,5 @@ document.addEventListener('touchend', function (event) {
     event.preventDefault();
     testText.value = '多於一個手指，預防end動作'
   }
-});
+}.{passive:false});
 </script>
