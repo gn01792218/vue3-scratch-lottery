@@ -13,10 +13,28 @@
       <p>縒我午我我五我擃我我我我我我我五我我我</p>
     </div>
   </section>
-  <section class="w-[200px] h-[200px] bg-slate-600 mb-10 touch-none">
-    這個區塊不可以縮放
-    <section class="w-[300px] h-[300px] bg-red-600">
-     這個區塊可以縮放
+  <section class="w-[200px] h-[200px] bg-slate-600 mb-10 touch-auto">
+    只有這個區塊可以縮放
+    <section class="w-[300px] h-[100px] bg-red-600 overflow-scroll mt-10">
+     <p>我可以被滾動</p>
+     <p>我可以被滾動</p>
+     <p>我可以被滾動</p>
+     <p>我可以被滾動</p>
+     <p>我可以被滾動</p>
+     <p>我可以被滾動</p>
+     <p>我可以被滾動</p>
+     <p>我可以被滾動</p>
+     <p>我可以被滾動</p>
+     <p>我可以被滾動</p>
+     <p>我可以被滾動</p>
+     <p>我可以被滾動</p>
+     <p>我可以被滾動</p>
+     <p>我可以被滾動</p>
+     <p>我可以被滾動</p>
+     <p>我可以被滾動</p>
+     <p>我可以被滾動</p>
+     <p>我可以被滾動</p>
+     <p>我可以被滾動</p>
    </section>
   </section>
   
@@ -38,12 +56,4 @@ const { count,doubleCount } = storeToRefs(useCounterStoreForSetup())
 
 //一般的REF
 const countFromRef = ref(0);
-
-onMounted(()=>{
-  //這裡的子元素需要有滾輪動作，所以要stopPropagation
-  const t = document.getElementById('test')!
-  t.addEventListener('wheel', function(event) {
-    event.stopPropagation()
-  })
-})
 </script>
