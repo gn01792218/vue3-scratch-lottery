@@ -1,5 +1,5 @@
 <template>
-  <div class="touch-pan-x">
+  <div class="touch-pan-x bg-red-200 h-[300px]">
     About 
     這裡使用pan-x
      <button type="button" @click="increment()">pinia count is: {{ count }}</button>
