@@ -13,6 +13,8 @@ document.addEventListener('wheel', function(event) {
 
 //防止手機端手指縮放網頁
 document.addEventListener('touchstart', function(event) {
+  if (event.touches.length > 1) {
     event.preventDefault()
-}, { passive: false })
+  }
+})
 </script>
