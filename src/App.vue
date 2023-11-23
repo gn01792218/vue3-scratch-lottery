@@ -36,11 +36,9 @@ document.addEventListener('touchmove', function (event) {
 
 document.addEventListener('touchend', function (event) {
   status.value = 'touchEnd'
-  var now = new Date().getTime();
-  if (now - lastTouchEnd <= 300) {
+ if (event.touches.length > 1) {
     event.preventDefault();
-    testText.value = '手指離開的時間小於300毫秒，預防end動作'
+    testText.value = '多於一個手指，預防end動作'
   }
-  lastTouchEnd = now;
 });
 </script>
