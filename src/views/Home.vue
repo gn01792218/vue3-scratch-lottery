@@ -14,7 +14,7 @@
     </div>
   </section>
   <section class="w-[500px] bg-slate-600 mb-10">
-    這個區塊不可以縮放
+    父層區塊不可以縮放加touch-none
       <button class="border-2" @click="test">點我看看呀</button>
     <section class="bg-yellow-500 h-[100px]">
       這個區塊沒有touch-none標籤
