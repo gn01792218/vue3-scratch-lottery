@@ -13,13 +13,16 @@
       <p>縒我午我我五我擃我我我我我我我五我我我</p>
     </div>
   </section>
-  <section class="w-[500px] bg-slate-600 mb-10 touch-none">
+  <section class="w-[500px] bg-slate-600 mb-10">
     這個區塊不可以縮放
+      <button class="border-2" @click="test">點我看看呀</button>
     <section class="bg-yellow-500 h-[100px]">
       這個區塊沒有touch-none標籤
+      <button class="border-2" @click="test">點我看看呀</button>
     </section>
     <section class="w-[300px] h-[150px] bg-yellow-500 overflow-scroll mt-10">
       這個區塊也沒有touch-none標籤
+      <button class="border-2" @click="test">點我看看呀</button>
      <p>我可以被滾動</p>
      <p>我可以被滾動</p>
      <p>我可以被滾動</p>
@@ -33,9 +36,11 @@
    </section>
    <section class="touch-manipulation bg-blue-400 h-[100px]">
     這個區塊有touch-手動標籤
+          <button class="border-2" @click="test">點我看看呀</button>
    </section>
    <section class="w-[300px] h-[150px] bg-blue-400 overflow-scroll mt-10 touch-manipulation">
       這個區塊有touch-手動標籤
+            <button class="border-2" @click="test">點我看看呀</button>
      <p>我可以被滾動</p>
      <p>我可以被滾動</p>
      <p>我可以被滾動</p>
@@ -67,4 +72,7 @@ const { count,doubleCount } = storeToRefs(useCounterStoreForSetup())
 
 //一般的REF
 const countFromRef = ref(0);
+function test (){
+  alert('哈')
+}
 </script>
