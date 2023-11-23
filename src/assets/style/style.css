@@ -1,3 +1,7 @@
 @tailwind base; 
 @tailwind components;
 @tailwind utilities;
+body{
+    /* 禁止使用者兩只縮放網頁和拖曳網頁 */
+    touch-action: none;
+}
