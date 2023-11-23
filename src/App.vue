@@ -19,26 +19,30 @@ document.addEventListener('wheel', function(event) {
 const status = ref("無狀態")
 const testText = ref("無動作")
 let lastTouchEnd = 0;
-document.addEventListener('touchstart', function(event) {
-  status.value = 'touchstart'
-  if (event.touches.length > 1) {
-    event.preventDefault()
-    testText.value = '多於一個手指，預防start動作'
-  }
-},{passive:false})
-document.addEventListener('touchmove', function (event) {
-  status.value = 'touchmove'
-  if (event.touches.length > 1) {
-    event.preventDefault();
-    testText.value = '多於一個手指，預防move動作'
-  }
-},{passive:false});
+// document.addEventListener('touchstart', function(event) {
+//   status.value = 'touchstart'
+//   if (event.touches.length > 1) {
+//     event.preventDefault()
+//     testText.value = '多於一個手指，預防start動作'
+//   }
+// },{passive:false})
+// document.addEventListener('touchmove', function (event) {
+//   status.value = 'touchmove'
+//   if (event.touches.length > 1) {
+//     event.preventDefault();
+//     testText.value = '多於一個手指，預防move動作'
+//   }
+// },{passive:false});
 
-document.addEventListener('touchend', function (event) {
-  status.value = 'touchEnd'
- if (event.touches.length > 1) {
-    event.preventDefault();
-    testText.value = '多於一個手指，預防end動作'
-  }
-}.{passive:false});
+// document.addEventListener('touchend', function (event) {
+//   status.value = 'touchEnd'
+//  if (event.touches.length > 1) {
+//     event.preventDefault();
+//     testText.value = '多於一個手指，預防end動作'
+//   }
+// }.{passive:false});
+document.addEventListener('gesturestart', function(event) {
+      // 阻止兩指縮放畫面
+  event.preventDefault();
+});
 </script>
