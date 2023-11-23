@@ -13,11 +13,11 @@
       <p>縒我午我我五我擃我我我我我我我五我我我</p>
     </div>
   </section>
-  <section class="w-[200px] h-[200px] bg-slate-600 mb-10" style="touch-action: none;">
-    這個區塊可以縮放
-  </section>
-   <section class="w-[300px] h-[300px] bg-slate-600">
+  <section class="w-[200px] h-[200px] bg-slate-600 mb-10 touch-none">
     這個區塊不可以縮放
+    <section class="w-[300px] h-[300px] bg-red-600">
+     這個區塊可以縮放
+   </section>
   </section>
   
   <button type="button" @click="countFromRef++">count is: {{ countFromRef }}</button>
