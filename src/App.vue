@@ -9,4 +9,10 @@ import Header from '@/components/Header.vue'
 document.addEventListener('wheel', function(event) {
     event.preventDefault()
 }, { passive: false })
+
+
+//防止手機端手指縮放網頁
+document.addEventListener('touchstart', function(event) {
+    event.preventDefault()
+}, { passive: false })
 </script>
