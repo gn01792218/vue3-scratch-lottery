@@ -13,9 +13,13 @@
       <p>縒我午我我五我擃我我我我我我我五我我我</p>
     </div>
   </section>
-  <section class="w-[500px] h-[200px] bg-slate-600 mb-10 touch-manipulation">
-    只有這個區塊可以縮放
-    <section class="w-[300px] h-[100px] bg-red-600 overflow-scroll mt-10">
+  <section class="w-[500px] bg-slate-600 mb-10 touch-none">
+    這個區塊不可以縮放
+    <section class="bg-yellow-500 h-[100px]">
+      這個區塊沒有touch-none標籤
+    </section>
+    <section class="w-[300px] h-[150px] bg-yellow-500 overflow-scroll mt-10">
+      這個區塊也沒有touch-none標籤
      <p>我可以被滾動</p>
      <p>我可以被滾動</p>
      <p>我可以被滾動</p>
@@ -25,6 +29,13 @@
      <p>我可以被滾動</p>
      <p>我可以被滾動</p>
      <p>我可以被滾動</p>
+     <p>我可以被滾動</p>
+   </section>
+   <section class="touch-manipulation bg-blue-400 h-[100px]">
+    這個區塊有touch-手動標籤
+   </section>
+   <section class="w-[300px] h-[150px] bg-blue-400 overflow-scroll mt-10 touch-manipulation">
+      這個區塊有touch-手動標籤
      <p>我可以被滾動</p>
      <p>我可以被滾動</p>
      <p>我可以被滾動</p>
