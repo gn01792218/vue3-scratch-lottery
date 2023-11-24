@@ -1,8 +1,6 @@
 <template>
-    <div class="touch-pan-y">
-        <Header/>
-        <router-view/>
-    </div>
+    <Header />
+    <router-view />
 </template>
 
 <script setup lang="ts">
