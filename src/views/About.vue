@@ -1,6 +1,8 @@
 <template>
- About 
-  <button type="button" @click="increment()">pinia count is: {{ count }}</button>
+  <div class="bg-red-200 h-screen">
+    About 
+     <button type="button" @click="increment()">pinia count is: {{ count }}</button>
+  </div>
 </template>
 <script setup lang="ts">
 import { storeToRefs } from 'pinia';
